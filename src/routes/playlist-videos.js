@@ -16,6 +16,7 @@ const videoMap = videoData.reduce((_videoMap, video) => {
 
 export function PlaylistVideos() {
   const params = useParams();
+  
   const playlist = playlistData.find((_playlist) => _playlist.id === parseInt(params.id || ''));
   const videos = playlist?.videoIds.map((video) => videoMap[video] || {}) || [];
 
